@@ -67,4 +67,26 @@ The key design choice is right in the middle: extraction confidence is checked *
 
 **What that explanation step actually does under the hood:**
 
-![Agentic explanation
+![Agentic explanation workflow](./agentic-explanation-workflow.png)
+
+When a recruiter asks "why review this candidate," the system doesn't just ask an AI to guess. It retrieves the actual extracted data, checks confidence, checks what's missing, pulls the relevant policy — and only then generates an explanation, grounded in those specific facts. That's the difference between an AI that explains itself and one that just sounds confident.
+
+## Want to run it yourself?
+
+```bash
+pip install -r requirements.txt
+```
+
+Grab your own free [Groq](https://console.groq.com) API key, paste it into `app.py` (replacing `PASTE_YOUR_GROQ_API_KEY_HERE`), then:
+
+```bash
+streamlit run app.py
+```
+
+## Being upfront about what's actually finished
+
+I built this in about 2 days as a portfolio project, so I focused my time deliberately. **Fully working:** the ranking, the two-list system, search, and the AI explanation feature. **Visible on screen but not wired up yet:** a few buttons like "download CV" or "schedule interview" — they show the intended design, but don't do anything yet. I'd rather say that plainly than let the demo oversell itself. Full breakdown is in the Case Study above.
+
+## Built with
+
+Python, Streamlit, and Groq's API (running an open-weight AI model)
