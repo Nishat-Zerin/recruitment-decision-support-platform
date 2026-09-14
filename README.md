@@ -44,10 +44,18 @@ For a company using this in practice: faster shortlisting, fewer strong candidat
 
 ![Candidates screen](./candidates-screen.png)
 
+## System architecture
+
+**How a CV goes from upload to a ranked, explained recommendation:**
+
+![Recruitment platform flowchart](./recruitment-platform-flowchart.png)
+
+The key design choice is right in the middle: extraction confidence is checked *separately* from match score. A CV that scores low because it genuinely lacks required skills is ranked low. A CV that couldn't be reliably read is never scored at all — it goes straight to manual review, no matter what a rough score might have said.
+
 ## Want the full story?
 
 - 📄 [Case Study](./AI-Recruitment-Platform-Case-Study.pdf) — the problem, the design decisions, how it stacks up against existing tools, and what I'd build next
-- 📄 [Business Requirements Document](./AI-Recruitment-Platform (BRD).pdf) — the detailed technical requirements, written the way a real one would be at a company
+- 📄 [Business Requirements Document](./AI-Recruitment-Platform-BRD.pdf) — the detailed technical requirements, written the way a real one would be at a company
 
 ## How it actually works, simply put
 
@@ -57,18 +65,6 @@ For a company using this in practice: faster shortlisting, fewer strong candidat
 4. Clicking a candidate shows a plain-English explanation of their ranking — written by an AI model, but only using facts actually found in their CV, never invented
 5. A separate tracker page shows people moving through stages: Shortlisted → Interview → Hired
 
-## Want to run it yourself?
+**What that explanation step actually does under the hood:**
 
-```bash
-pip install -r requirements.txt
-```
-
-Grab your own free [Groq](https://console.groq.com) API key, paste it into `app.py` (replacing `PASTE_YOUR_GROQ_API_KEY_HERE`), then:
-
-```bash
-streamlit run app.py
-```.
-
-## Built with
-
-Python, Streamlit, and Groq's API (running an open-weight AI model)
+![Agentic explanation
