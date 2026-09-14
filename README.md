@@ -47,7 +47,7 @@ For a company using this in practice: faster shortlisting, fewer strong candidat
 ## Want the full story?
 
 - 📄 [Case Study](./AI-Recruitment-Platform-Case-Study.pdf) — the problem, the design decisions, how it stacks up against existing tools, and what I'd build next
-- 📄 [Business Requirements Document](./AI-Recruitment-Platform-BRD.pdf) — the detailed technical requirements, written the way a real one would be at a company
+- 📄 [Business Requirements Document](./AI-Recruitment-Platform (BRD).pdf) — the detailed technical requirements, written the way a real one would be at a company
 
 ## How it actually works, simply put
 
